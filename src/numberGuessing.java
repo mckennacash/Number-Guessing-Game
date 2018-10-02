@@ -18,6 +18,7 @@ public class numberGuessing {
             pickedNumber = (int) (Math.random() * 100);
             System.out.println("You have 6 tries to guess the right number. Want to play?");
             keyboard.nextLine();
+           // System.out.println(pickedNumber);
               do {
                   System.out.println("Pick a number between 0-100");
                   userInput = keyboard.nextInt();
@@ -26,7 +27,7 @@ public class numberGuessing {
                       System.out.println("You got it!");
                   } else if (userInput > pickedNumber)
                       System.out.println("Too high");
-                  if (userInput < pickedNumber)
+                 if (userInput < pickedNumber)
                       System.out.println("Too low");
 
               } while (tries !=6 && pickedNumber != userInput);
