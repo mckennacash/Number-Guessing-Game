@@ -18,30 +18,35 @@ public class numberGuessing {
             pickedNumber = (int) (Math.random() * 100);
             System.out.println("You have 6 tries to guess the right number. Want to play?");
             keyboard.nextLine();
-           // System.out.println(pickedNumber);
-              do {
-                  System.out.println("Pick a number between 0-100");
-                  userInput = keyboard.nextInt();
-                  keyboard.nextLine();
-                  if (userInput == pickedNumber) {
-                      System.out.println("You got it!");
-                  } else if (userInput > pickedNumber)
-                      System.out.println("Too high");
-                 if (userInput < pickedNumber)
-                      System.out.println("Too low");
+            do {
 
-              } while (tries !=6 && pickedNumber != userInput);
+                System.out.println("Pick a number between 0-100");
+                userInput = keyboard.nextInt();
+                keyboard.nextLine();
+                if (userInput == pickedNumber) {
+                    System.out.println("You got it!");
+                } else if (userInput > pickedNumber) {
+                    System.out.println("Too high");
+                }
 
-           System.out.println("Want to play again?");
+                if (userInput < pickedNumber) {
+                    System.out.println("Too low");
+                }
+                tries++;
+
+            } while (tries <=6 && pickedNumber != userInput);
+
+            System.out.println("Want to play again?");
 
 
             userAnswer = keyboard.nextLine();
-            if (userAnswer.equalsIgnoreCase("no")){break;}
 
-        }while(userAnswer.equalsIgnoreCase("no"));
+
+        }while(!userAnswer.equalsIgnoreCase("no"));
 
 
 
 
     }
+
 }
