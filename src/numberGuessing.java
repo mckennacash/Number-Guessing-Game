@@ -27,12 +27,17 @@ public class numberGuessing {
                     System.out.println("You got it!");
                 } else if (userInput > pickedNumber) {
                     System.out.println("Too high");
+                    tries++;
                 }
 
                 if (userInput < pickedNumber) {
                     System.out.println("Too low");
+                    tries++;
                 }
-                tries++;
+
+                if (tries>6) {
+                    System.out.println("You lost");
+                }
 
             } while (tries <=6 && pickedNumber != userInput);
 
